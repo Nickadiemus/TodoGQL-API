@@ -5,6 +5,8 @@ import React, {Component} from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
+//Component imports
+import Navbar from './_components/Navbar'
 
 //style imports
 
@@ -14,6 +16,7 @@ const App = ({data}) => {
     const RenderedTodoObjects = data.TodoObjects.map(TodoObjects => (<li key = {TodoObjects._id}>{TodoObjects.name}</li>));
     return (
       <div>
+        <Navbar />
         <h1>{data.TodoObject}</h1>
         <ul>
           {RenderedTodoObjects}
