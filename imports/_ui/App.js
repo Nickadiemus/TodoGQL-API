@@ -1,41 +1,35 @@
-//main imports
+/** main import(s)                                                      */
 import React, {Component} from 'react';
 
-//helper imports
+/** helper import(s)                                                    */
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
-//Component imports
-import Navbar from './_components/Navbar'
+/** component import(s)                                                 */
+import Navbar from './_components/Navbar';
+import Main from './_components/Main';
+import Footer from './_components/Footer'
+/** style import(s)                                                     */
 
-//style imports
 
+/*/
+ *  Component: App
+ *  @props {data}
+ *  @EventHandler(s): None
+ *  @Description: This is the sub root of the application which acts
+ *  as the container for the application
+/*/
 const App = ({data}) => {
-  if(data.loading) return null;
-  else {
-    const RenderedTodoObjects = data.TodoObjects.map(TodoObjects => (<li key = {TodoObjects._id}>{TodoObjects.name}</li>));
-    return (
-      <div>
-        <Navbar />
-        <h1>{data.TodoObject}</h1>
-        <ul>
-          {RenderedTodoObjects}
-        </ul>
+  return(
+    <div >
+      <Navbar />
+      <div className = "container">
+        <Main />
       </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
-const testQuery = gql`
-{
-  TodoObject,
-  TodoObjects{
-    _id
-    name
-  }
-}
-`;
 
-export default graphql(
-  testQuery
-)(App);
+export default App;

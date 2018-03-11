@@ -1,12 +1,24 @@
-//main imports
+/** main import(s)                                                      */
 import React, {Component} from 'react';
 
-//helper imports
+/** helper import(s)                                                    */
+import {Link} from 'react-router-dom';
 
-//style imports
+/** component import(s)                                                 */
+
+/** style import(s)                                                     */
+import '../_style/navbar.css';
 
 
+
+/*/
+ *  Component: Navbar
+ *  @props {n/a}
+ *  @EventHandler(s): none
+ *  @Description: Basic navigation menu with Links to differnt Routes
+/*/
 class Navbar extends Component {
+
   render(){
     return(
       <div>
@@ -15,11 +27,13 @@ class Navbar extends Component {
             <a href="/home" className="brand-logo center foojilogo"><img src = "" alt = "logo" /></a>
             <a data-activates="main-menu" className="button-collapse show-on-large"><i className="fa fa-bars"></i></a>
             <ul id="nav-mobile" className="right hide-on-small-only">
-              <li><i className = "fa fa-list"></i>TodoLists</li>
+              <Link to = '/home' > <li style = {{
+                'paddingRight': '1.25em'
+              }} ><i className = "fa fa-list"></i> TodoLists</li></Link>
             </ul>
             <ul className="side-nav" id="main-menu">
-              <li><i className = "fa fa-list"></i> TodoLists</li>
-              <li><i className = "fa fa-list"></i> Add TodoItem</li>
+              <Link to = '/' > <li style = {{color: 'black'}}><i className = "fa fa-list"></i> Home</li></Link>
+              <Link to = '/home' > <li style = {{color: 'black'}}><i className = "fa fa-list"></i> TodoLists</li></Link>
             </ul>
           </div>
         </nav>

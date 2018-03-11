@@ -5,6 +5,7 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from '../../_ui/App';
 
@@ -22,10 +23,13 @@ const client = new ApolloClient({
   cache
 })
 
+//runs and renders to the Element id provided
 Meteor.startup( () => {
   render(
     <ApolloProvider client = {client}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
     , document.getElementById("a"));
 });

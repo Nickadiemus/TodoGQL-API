@@ -5,4 +5,19 @@
 type TodoObject {
   _id: String!
   name: String!
+  items: [TodoItem]
+  completed: Boolean
+}
+
+# queries
+type Query {
+  TodoObjects: [TodoObject]
+  TodoItems: [TodoItem]
+  GetTodoObject(_id: String!): [TodoObject]
+}
+
+# mutations
+type Mutation {
+  createTodoObject(name: String!): TodoObject
+  deleteTodoObject(key: String!): TodoObject
 }

@@ -1,0 +1,10 @@
+type TodoItem {
+  _id: String
+  content: String
+  completed: Boolean
+}
+
+extend type Mutation {
+  createTodoItem(name: String!, TodoObjectId: String!): TodoItem
+  deleteTodoItem(key: String!): TodoItem
+}

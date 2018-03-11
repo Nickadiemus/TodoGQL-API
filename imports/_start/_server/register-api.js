@@ -1,39 +1,41 @@
 //main apollo server from .meteor
 import {createApolloServer} from 'meteor/apollo';
 import {makeExecutableSchema} from 'graphql-tools';
+import merge from 'lodash/merge';
+
 //GraphQL TodoObject Schema
 import TodoObjectsScehma from '../../_api/_Todos/TodoObjects.graphql';
+import TodoItemsSchema from '../../_api/_TodoItems/TodoItems.graphql';
+import TodoResolvers from '../../_api/_Todos/resolvers.js';
+import TodoItemResolvers from '../../_api/_TodoItems/resolvers.js';
 
-const testSchema = `
-  type Query {
-    TodoObject: String
-    TodoObjects: [TodoObject]
+// Temporary Query Schemas Boisssssss ssssssassa
+const titleSchema = `
+  extend type Query {
+    HomeTitle: String
   }
 `;
+//Type Definitions
 const typeDefs = [
-  testSchema,
-  TodoObjectsScehma
+  titleSchema,
+  TodoObjectsScehma,
+  TodoItemsSchema
 ];
 
-const resolvers = {
+const resolver = {
   Query: {
-    TodoObject() {
-      return "This is a my first query"
-    },
-    TodoObjects(){
-      return[
-        {
-          _id:"asfdsaf",
-          name:"TodoObject 1"
-        },
-        {
-          _id:"gjdfag",
-          name:"TodoObject 2"
-        }
-      ];
+    HomeTitle() {
+      return "Todo Lists"
     }
   }
 }
+
+// Merges Queries together from lodash/merge
+const resolvers = merge(
+  resolver,
+  TodoResolvers,
+  TodoItemResolvers
+)
 
 const schema = makeExecutableSchema({
   typeDefs,
