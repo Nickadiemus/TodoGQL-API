@@ -1,10 +1,11 @@
 type TodoItem {
   _id: String
   content: String
+  parent: String
   completed: Boolean
 }
 
 extend type Mutation {
-  createTodoItem(name: String!, TodoObjectId: String!): TodoItem
+  createTodoItem(content: String!, parent: String!): TodoItem
   deleteTodoItem(key: String!): TodoItem
 }

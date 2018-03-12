@@ -9,7 +9,7 @@ import TodoItemsSchema from '../../_api/_TodoItems/TodoItems.graphql';
 import TodoResolvers from '../../_api/_Todos/resolvers.js';
 import TodoItemResolvers from '../../_api/_TodoItems/resolvers.js';
 
-// Temporary Query Schemas Boisssssss ssssssassa
+// Temporary Query Schemas
 const titleSchema = `
   extend type Query {
     HomeTitle: String

@@ -8,7 +8,7 @@ import {graphql} from 'react-apollo';
 /** component import(s)                                                 */
 import Navbar from './_components/Navbar';
 import Main from './_components/Main';
-import Footer from './_components/Footer'
+
 /** style import(s)                                                     */
 
 
@@ -26,7 +26,6 @@ const App = ({data}) => {
       <div className = "container">
         <Main />
       </div>
-      <Footer />
     </div>
   );
 }

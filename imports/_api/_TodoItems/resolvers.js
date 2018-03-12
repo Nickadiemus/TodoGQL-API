@@ -9,12 +9,14 @@ export default {
 
   Mutation: {
     createTodoItem(obj, args, context){
-      console.log("Got to TodoItem");
+      console.log('These are the arguments');
+      console.log(args);
       const TodoItemId = TodoItem.insert({
-        content: args.name,
-        TodoObjectid: args.TodoObjectId,
+        content: args.content,
+        parent: args.parent,
         completed: false
       });
+      console.log(TodoItemId);
       return TodoItem.findOne(TodoItemId)
     },
     deleteTodoItem(obj, args, context){

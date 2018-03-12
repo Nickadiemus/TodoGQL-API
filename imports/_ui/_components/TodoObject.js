@@ -7,8 +7,8 @@ import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
 /** component import(s)                                                 */
-import TodoLists from '../_layouts/TodoLists';
-
+import TodoItem from './TodoItem';
+import TodoItemForm from './TodoItemForm';
 /** style import(s)                                                     */
 
 
@@ -21,7 +21,13 @@ import TodoLists from '../_layouts/TodoLists';
  *  TodoObject to pass to the resolver and then delete in the
  *  database
 /*/
-const deleteTodoObject = gql`mutation deleteTodoObject($key: String!){deleteTodoObject(key: $key){_id}}`;
+const deleteTodoObject = gql`
+  mutation deleteTodoObject($key: String!)
+  {
+    deleteTodoObject(key: $key){
+      _id
+    }
+  }`;
 
 /*/
  *  Component: TodoObject
@@ -35,7 +41,8 @@ class TodoObject extends Component {
     console.log(props);
     this.state = {
       item: props.item,
-      key: props.id
+      key: props.id,
+      todoitems: props.todoitems
     }
   }
 
@@ -57,22 +64,34 @@ class TodoObject extends Component {
     });
   }
 
+
   render(){
+    const TodoItems = this.props.todoitems.map(TodoItems => (
+      <TodoItem key = {TodoItems._id} id = {TodoItems._id} content = {TodoItems.content} completed = {TodoItems.completed}/>
+    ));
     return(
-      <li className = "collection-item">
-        <Link to = {`/TodoLists/${this.state.key}`}  >{this.state.item}</Link>
-        <a onClick = {this.onDelete} ><i className = "fa fa-trash-o right"></i></a>
+      <li>
+        <div className="collapsible-header"><span>{this.state.item}</span><a onClick = {this.onDelete} ><i className = "fa fa-trash-o right"></i></a></div>
+        <div className="collapsible-body">
+          <TodoItemForm refetch = {this.props.refetch} TodoObjectid = {this.props.id}/>
+          <ul className = "collection">
+            {TodoItems}
+          </ul>
+        </div>
       </li>
     )
   }
 }
 
-//exports TodoObject and refetches queries when TodoObjects are Deleted
-export default graphql(deleteTodoObject, {
+const TodoObjectWithMutations =
+graphql(deleteTodoObject, {
   name: "deleteTodoObject",
   option: {
     refetchQueries: [
       'TodoObjectQuery'
     ]
   }
-})(TodoObject);
+})(TodoObject)
+
+//exports TodoObject and refetches queries when TodoObjects are Deleted
+export default TodoObjectWithMutations;

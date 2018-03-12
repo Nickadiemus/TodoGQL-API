@@ -37,15 +37,16 @@ const Home = ({data}) => {
     )
   }
   else {
+    console.log(data)
     const RenderedTodoObjects = data.TodoObjects.map(TodoObjects => (
-      <TodoObject refetch = {data.refetch} key = {TodoObjects._id} item = {TodoObjects.name} id = {TodoObjects._id} todoItems = {TodoObject.items}/>
+      <TodoObject refetch = {data.refetch} key = {TodoObjects._id} item = {TodoObjects.name} id = {TodoObjects._id} todoitems = {TodoObjects.items} />
     ));
     return (
         <div>
           <ul className = "collection with-header">
             <li className = "collection-header"><h1>{data.HomeTitle}</h1></li>
             <TodoObjectForm />
-            <ul className = "collection">
+            <ul className = "collapsible popout" data-collapsible="accordion">
               {RenderedTodoObjects}
             </ul>
           </ul>

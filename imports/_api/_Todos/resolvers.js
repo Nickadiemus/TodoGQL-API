@@ -5,31 +5,26 @@ export default {
   Query: {
     TodoObjects(){
       return TodoObject.find({}).fetch();
-    },
-    GetTodoObject(obj, args, context){
-      console.log(args);
-      temp = TodoObject.find({}).fetch();
-      console.log(temp);
-      // for(i = 0; i < temp.length)
-      
     }
   },
 
   TodoObject: {
     items: todoitems => {
+      console.log(todoitems);
       return TodoItem.find({
-        TodoObjectId: todoitems._id
+        parent: todoitems._id
       }).fetch();
     }
   },
-
+ 
   Mutation: {
     //data passed through mutation
     //Req: String Type
     createTodoObject(obj, args, context) {
       console.log(args.name);
       const TodoObjectId = TodoObject.insert({
-        name: args.name
+        name: args.name,
+        completed: false
       })
       return TodoObject.findOne(TodoObjectId);
     },
@@ -41,6 +36,9 @@ export default {
       const RemoveTodoObjectId = TodoObject.remove({
         _id: args.key
       });
+      const CascadeRemoveTodoItem = TodoItem.remove({
+        parent: args.key
+      })
 
       return TodoObject.findOne(RemoveTodoObjectId)
     }
