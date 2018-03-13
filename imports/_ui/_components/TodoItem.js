@@ -8,11 +8,16 @@ import React, {Component} from 'react';
 /** style import(s)                                                     */
 
 
-
+/*/
+ *  Component: TodoItem
+ *  @props {id: Type String, content: Type String, completed: Type Boolean}
+ *  @EventHandler(s): None
+ *  @Description: Basic TodoItem created from an array of TodoItems passed
+ *  as props from TodoObject
+/*/
 class TodoItem extends Component {
   constructor(props){
     super(props);
-    console.log(props);
     this.state = {
       id: props._id,
       content: props.content,

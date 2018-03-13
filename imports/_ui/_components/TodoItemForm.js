@@ -8,6 +8,8 @@ import {graphql} from 'react-apollo';
 /** component import(s)                                                 */
 
 /** style import(s)                                                     */
+import '../_style/fa-icon.css'
+
 
 /*/
  *  Query Type: Mutation
@@ -36,9 +38,14 @@ class TodoItemForm extends Component {
     super(props);
   }
 
+/*/
+ *  Function: createItem()
+ *  @param(s) {n/a}
+ *  @Descripotion: Calls Mutation Function createTodoItem() that takes in
+ *  a $content and $parent variable that is passed through the mutation
+ *  function in "_api/_TodoItems/resolvers.js"
+/*/
   createItem = () => {
-    console.log(this.name.value);
-
     this.props.createTodoItem({
       variables: {
         content: this.name.value,
@@ -54,14 +61,14 @@ class TodoItemForm extends Component {
 
   render(){
     return(
-      <div>
-        <div className = "input-field">
-          <input id = "TodoItem" type = "text" ref={input => (this.name = input)} />
+      <div className = "row">
+        <div className = "col s11">
+          <input type = "text" ref={input => (this.name = input)} />
           <label htmlFor="TodoItem">TodoItem</label>
         </div>
-          <a onClick = {this.createItem} >
-            <i className = "fa fa-plus right"/>
-          </a>
+        <div className = "col s1">
+          <a style = {{cursor: 'pointer'}} onClick = {this.createItem} ><i style = {{'fontSize': '24px', 'margin': '15px 0px 0px 10px'}} className = "fa fa-plus right"/></a>
+        </div>
       </div>
     )
   }

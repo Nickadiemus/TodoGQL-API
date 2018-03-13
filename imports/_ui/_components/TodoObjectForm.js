@@ -30,17 +30,19 @@ const createTodoObject = gql`mutation createTodoObject($name: String!) {createTo
 class TodoObjectForm extends Component {
 
 /*/
- *  Function: onSubmit()
+ *  Function: createObject()
  *  @param(s) {n/a}
- *  @Descripotion: Calls function createTodoObject() when the button Event
- *  Handler is initiated.
+ *  @Descripotion: Calls Mutation function createTodoObject() that takes in
+ *  a $name variable that is passed through the mutation function
+ *  in "_api/_Todos/resolvers.js"
 /*/
-  onSubmit = () =>{
-    console.log(this.name.value);
+  createObject = () =>{
     this.props.createTodoObject({
       variables: {
         name: this.name.value
       }
+    }).then(() => {
+      this.name.value = "";
     }).catch(error =>{
       console.log(error);
     })
@@ -49,15 +51,17 @@ class TodoObjectForm extends Component {
   render(){
     console.log(this.props.key);
     return(
-      <div style = {
-        {
-          padding: '0em 1.75em 0em 1.75em'
-        }
-      }
-      >
-        <div className = "input-field">
-          <input type = "text" ref={input => (this.name = input)} />
-          <button className = "btn" onClick = {this.onSubmit}>Submit</button>
+      <div style = {{padding: '0em 1.75em 0em 1.75em', 'marginTop':'1.75em'}}>
+        <div style = {{'display':'inline'}}  className = "input-field">
+          <div className = "row">
+            <div className = "col s11">
+              <input type = "text" ref={input => (this.name = input)} />
+              <label htmlFor="TodoItem">TodoObject</label>
+            </div>
+            <div className = "col s1">
+              <a style = {{cursor: 'pointer'}} onClick = {this.createObject} ><i style = {{'fontSize': '32px', 'margin': '15px 0px 0px 10px'}} className = "fa fa-plus right"/></a>
+            </div>
+          </div>
         </div>
       </div>
     )

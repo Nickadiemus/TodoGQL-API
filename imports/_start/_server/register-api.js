@@ -9,7 +9,7 @@ import TodoItemsSchema from '../../_api/_TodoItems/TodoItems.graphql';
 import TodoResolvers from '../../_api/_Todos/resolvers.js';
 import TodoItemResolvers from '../../_api/_TodoItems/resolvers.js';
 
-// Temporary Query Schemas
+// Temporary Query Schemasssss
 const titleSchema = `
   extend type Query {
     HomeTitle: String
@@ -25,7 +25,7 @@ const typeDefs = [
 const resolver = {
   Query: {
     HomeTitle() {
-      return "Todo Lists"
+      return "Fooji Todo List"
     }
   }
 }

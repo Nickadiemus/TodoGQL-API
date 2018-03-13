@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 /** component import(s)                                                 */
+import Logo from './Logo';
 
 /** style import(s)                                                     */
 import '../_style/navbar.css';
@@ -24,7 +25,7 @@ class Navbar extends Component {
       <div>
         <nav className="blue lighten-3">
           <div className="nav-wrapper">
-            <a href="/home" className="brand-logo center foojilogo"><img src = "" alt = "logo" /></a>
+            <a href="/home" className="brand-logo center foojilogo"><Logo /></a>
             <a data-activates="main-menu" className="button-collapse show-on-large"><i className="fa fa-bars"></i></a>
             <ul id="nav-mobile" className="right hide-on-small-only">
               <Link to = '/home' > <li style = {{

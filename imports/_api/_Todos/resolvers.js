@@ -5,6 +5,12 @@ export default {
   Query: {
     TodoObjects(){
       return TodoObject.find({}).fetch();
+    },
+    FindTodoObject(obj, { id }, context){
+      console.log(id);
+      return TodoObject.findOne({
+        _id: id
+      })
     }
   },
 

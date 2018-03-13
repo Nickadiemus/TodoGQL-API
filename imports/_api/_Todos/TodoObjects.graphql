@@ -13,7 +13,7 @@ type TodoObject {
 type Query {
   TodoObjects: [TodoObject]
   TodoItems: [TodoItem]
-  GetTodoObject(_id: String!): [TodoObject]
+  FindTodoObject(id: String!): TodoObject
 }
 
 # mutations

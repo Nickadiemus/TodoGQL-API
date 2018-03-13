@@ -5,6 +5,10 @@ type TodoItem {
   completed: Boolean
 }
 
+extend type Query{
+  FindTodoItem(id: String): TodoItem
+}
+
 extend type Mutation {
   createTodoItem(content: String!, parent: String!): TodoItem
   deleteTodoItem(key: String!): TodoItem
