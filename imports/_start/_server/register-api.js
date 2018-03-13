@@ -9,7 +9,7 @@ import TodoItemsSchema from '../../_api/_TodoItems/TodoItems.graphql';
 import TodoResolvers from '../../_api/_Todos/resolvers.js';
 import TodoItemResolvers from '../../_api/_TodoItems/resolvers.js';
 
-// Temporary Query Schemasssss
+// Title Query Schema
 const titleSchema = `
   extend type Query {
     HomeTitle: String
@@ -36,10 +36,11 @@ const resolvers = merge(
   TodoResolvers,
   TodoItemResolvers
 )
-
+// combines scehma types and their resolvers to gether
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
 })
 
+// posts the GraphQL schema to the server 
 createApolloServer({schema})

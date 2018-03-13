@@ -71,7 +71,17 @@ class TodoObject extends Component {
     ));
     return(
       <li>
-        <div className="collapsible-header"><span>{this.state.item}</span><a onClick = {this.onDelete} ><i className = "fa fa-trash-o right"></i></a></div>
+        <div className="collapsible-header">
+        <span>{this.state.item}</span>
+        <div>
+          <a onClick = {this.onDelete} ><i style = {
+            {
+              position: 'absolute',
+              paddingRight: '1.75em',
+              right: '0'
+        }} className = "fa fa-trash-o right"></i></a>
+        </div>
+        </div>
         <div className="collapsible-body">
           <TodoItemForm refetch = {this.props.refetch} TodoObjectid = {this.props.id}/>
           <ul className = "collection">
