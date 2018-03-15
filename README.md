@@ -21,6 +21,8 @@ This application is a **Fullstack TodoList** that utilizes the power of **Meteor
 
 #### Dev Dependencies  
   * babel-plugin-inline-import
+  * jest
+  * node-fetch
 
 ## Overview
 The architecture I built this test off of is GraphQL connected to a Mongo database. This was driven by the help of [Meteor](https://www.meteor.com/) which is a open-sourced, isomorphic JavaScript framework written in node. I used this platform to help rapidly create a working demo for the purpose of client-side testing and the ease of Replication of my 2nd attempt of this test back in November. ([As Seen Here](https://github.com/Nickadiemus/TodoAPI)) Apollo was used to build over the client to allow easier GraphQL queries, ensure the results of the data are being updated and in sync with each other, and provides a easy way to update the cache of the browser with the results sent from the server.
