@@ -60,3 +60,15 @@ I chose GraphQL to build my API over a generic REST API because it offers much m
 React-Apollo was used to pair with React. This allows an instance of the Apollo Client to wrap around the whole react application to provide an easy use to data management. The Apollo client takes care of the request cycle from start to finish. This including tracking loading and error states for you. It also helps easily define GraphQL requests inside respective components to fetch or manipulate data. It provides and easy way to get your application running and connected with your GraphQL server and start serving content to your application.
 
 ---
+
+## Jest
+
+Jest was used for Unit testing with the API. I chose this technology because it integrates very well with React and is quite simple to set up and use. This allows me isolate parts of the API and test their functionality and responses.
+
+***
+
+## Client Preview
+
+![alt text](https://i.imgur.com/mPtUUvr.png)
+
+![alt text](https://i.imgur.com/x9so525.png)
