@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test call FetchTodoItems 1`] = `
+Object {
+  "data": Object {
+    "TodoItems": Array [
+      Object {
+        "_id": "mb4zcsEbGwzA6XuTz",
+        "completed": false,
+        "content": "TodoItem1",
+        "parent": "TtqWyeRJLbC67Hs7G",
+      },
+      Object {
+        "_id": "xavRNCd5RJfhTdJjK",
+        "completed": false,
+        "content": "TodoItem2",
+        "parent": "TtqWyeRJLbC67Hs7G",
+      },
+      Object {
+        "_id": "7W6dsBuZpRP7233mE",
+        "completed": false,
+        "content": "TestItem1",
+        "parent": "DeFkpyTASdvxGnSmX",
+      },
+      Object {
+        "_id": "vXMt2uzo8rbheR7ju",
+        "completed": false,
+        "content": "TestItem2",
+        "parent": "DeFkpyTASdvxGnSmX",
+      },
+      Object {
+        "_id": "bkgAg6PbHeeGGZnpZ",
+        "completed": false,
+        "content": "TestItem3",
+        "parent": "DeFkpyTASdvxGnSmX",
+      },
+      Object {
+        "_id": "GFsG62dTm2MYob6d3",
+        "completed": false,
+        "content": "TestItem1",
+        "parent": "shQMsTn2uHFzAYBmg",
+      },
+    ],
+  },
+}
+`;
+
+exports[`test call for FetchSingleTodoItem(id) 1`] = `
+Object {
+  "data": Object {
+    "FindTodoItem": Object {
+      "_id": "mb4zcsEbGwzA6XuTz",
+      "completed": false,
+      "content": "TodoItem1",
+      "parent": "TtqWyeRJLbC67Hs7G",
+    },
+  },
+}
+`;

@@ -1,0 +1,19 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.2",
+    "@babel/runtime": "^7.0.0-beta.36"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-import": "^2.0.6",
+    "node-fetch": "^2.1.1"
+  }
+}

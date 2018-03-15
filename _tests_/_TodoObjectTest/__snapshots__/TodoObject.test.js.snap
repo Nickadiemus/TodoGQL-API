@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test call for FetchSingleTodoObject Request 1`] = `
+Object {
+  "data": Object {
+    "FindTodoObject": Object {
+      "_id": "TtqWyeRJLbC67Hs7G",
+      "completed": false,
+      "items": Array [
+        Object {
+          "_id": "mb4zcsEbGwzA6XuTz",
+          "completed": false,
+          "content": "TodoItem1",
+          "parent": "TtqWyeRJLbC67Hs7G",
+        },
+        Object {
+          "_id": "xavRNCd5RJfhTdJjK",
+          "completed": false,
+          "content": "TodoItem2",
+          "parent": "TtqWyeRJLbC67Hs7G",
+        },
+      ],
+      "name": "TodoObject1",
+    },
+  },
+}
+`;
+
+exports[`test call for TodoObjects Request 1`] = `
+Object {
+  "data": Object {
+    "TodoObjects": Array [
+      Object {
+        "_id": "TtqWyeRJLbC67Hs7G",
+        "completed": false,
+        "items": Array [
+          Object {
+            "_id": "mb4zcsEbGwzA6XuTz",
+            "completed": false,
+            "content": "TodoItem1",
+            "parent": "TtqWyeRJLbC67Hs7G",
+          },
+          Object {
+            "_id": "xavRNCd5RJfhTdJjK",
+            "completed": false,
+            "content": "TodoItem2",
+            "parent": "TtqWyeRJLbC67Hs7G",
+          },
+        ],
+        "name": "TodoObject1",
+      },
+      Object {
+        "_id": "DeFkpyTASdvxGnSmX",
+        "completed": false,
+        "items": Array [
+          Object {
+            "_id": "7W6dsBuZpRP7233mE",
+            "completed": false,
+            "content": "TestItem1",
+            "parent": "DeFkpyTASdvxGnSmX",
+          },
+          Object {
+            "_id": "vXMt2uzo8rbheR7ju",
+            "completed": false,
+            "content": "TestItem2",
+            "parent": "DeFkpyTASdvxGnSmX",
+          },
+          Object {
+            "_id": "bkgAg6PbHeeGGZnpZ",
+            "completed": false,
+            "content": "TestItem3",
+            "parent": "DeFkpyTASdvxGnSmX",
+          },
+        ],
+        "name": "TodoObject2",
+      },
+      Object {
+        "_id": "shQMsTn2uHFzAYBmg",
+        "completed": false,
+        "items": Array [
+          Object {
+            "_id": "GFsG62dTm2MYob6d3",
+            "completed": false,
+            "content": "TestItem1",
+            "parent": "shQMsTn2uHFzAYBmg",
+          },
+        ],
+        "name": "TodoObject3",
+      },
+    ],
+  },
+}
+`;
