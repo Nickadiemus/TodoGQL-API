@@ -71,6 +71,4 @@ Jest was used for Unit testing with the API. I chose this technology because it 
 
 ## Client Preview
 
-![alt text](https://i.imgur.com/mPtUUvr.png)
 
-![alt text](https://i.imgur.com/x9so525.png)
